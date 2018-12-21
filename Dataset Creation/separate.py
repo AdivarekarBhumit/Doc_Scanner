@@ -5,8 +5,8 @@ import shutil
 # print(len(files_list))
 current_path = './Dataset/'
 files_list = [f for f in os.listdir(current_path)]
-passport_path = './Passport/'
-pan_licence = './Pan_Licence/'
+passport_path = '../Doc_Scaner/Passport/'
+pan_licence = '../Doc_Scaner/Pan_Licence/'
 calibri = 'calibri'
 verdana = 'verdana'
 
