@@ -137,3 +137,8 @@ vscode/*
 /Pan_Licence/*
 /Passport/*
 /logs/*
+/Dataset Creation/Dataset/*
+/Dataset Creation/Pancard/*
+/Dataset Creation/Passport/*
+/characters/
+/test_images/

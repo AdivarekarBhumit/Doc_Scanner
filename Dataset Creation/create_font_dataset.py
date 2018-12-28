@@ -6,7 +6,7 @@ import numpy as np
 import os
 import glob
  
-fontSize = 18
+fontSize = 37
 imgSize = (32,32)
 position = (0,0)
  
@@ -32,7 +32,7 @@ for line in fhandle:
  
 total_fonts = len(fonts_list)
 #paths = ttfquery.findsystem.findFonts()
-all_fonts = glob.glob("./fonts/*.ttf")
+all_fonts = glob.glob("../fonts/*.ttf")
 f_flag = np.zeros(total_fonts)
  
 #print(all_fonts)
@@ -56,19 +56,20 @@ for sys_font in all_fonts:
             pos_x = 0
             pos_y = 0
             pos_idx=0
-            for y in [pos_y-1, pos_y, pos_y+1]:
-               for x in [pos_x-1, pos_x, pos_x+1]:
-                  position = (9,6)
-                  draw.text(position, ch, (255,255,255), font=font)
-                  ##without this flag, it creates 'Calibri_a.jpg' even for 'Calibri_A.jpg'
-                  ##which overwrites lowercase images
-                  l_u_d_flag = "u"
-                  if ch.islower():
-                     l_u_d_flag = "l"
-                  elif ch.isdigit():
-                     l_u_d_flag = "d"
-                  file_name = font_file + '12_' + l_u_d_flag + '_' + str(pos_idx) + '_' + ch + '.jpg'
-                  file_name = os.path.join(dataset_path,file_name)
-                  image.save(file_name)
-                  pos_idx = pos_idx + 1
+            for n in range(16,30):
+               for y in [pos_y-1, pos_y, pos_y+1]:
+                  for x in [pos_x-1, pos_x, pos_x+1]:
+                     position = (4,-7)
+                     draw.text(position, ch, (255,255,255), font=font)
+                     ##without this flag, it creates 'Calibri_a.jpg' even for 'Calibri_A.jpg'
+                     ##which overwrites lowercase images
+                     l_u_d_flag = "u"
+                     if ch.islower():
+                        l_u_d_flag = "l"
+                     elif ch.isdigit():
+                        l_u_d_flag = "d"
+                     file_name = font_file + str(n) +'_' + l_u_d_flag + '_' + str(pos_idx) + '_' + ch + '.jpg'
+                     file_name = os.path.join(dataset_path,file_name)
+                     image.save(file_name)
+                     pos_idx = pos_idx + 1
       f_idx = f_idx + 1

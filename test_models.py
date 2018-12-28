@@ -28,5 +28,5 @@ def read_image(image):
 model1 = load_model(model_architecture='./trained_models/model_basic.json', model_weights='./trained_models/model_basic.h5')
 model2 = load_model(model_architecture='./trained_models/model_squeezenet.json', model_weights='./trained_models/model_squeezenet.h5')
 
-print(model1.predict(read_image('./Passport/verdana_u_2_O.jpg')))
-print(model2.predict(read_image('./Passport/verdana_u_2_O.jpg')))
+print(new_label_dict[model1.predict(read_image('211.png')).argmax()])
+print(new_label_dict[model2.predict(read_image('211.png')).argmax()])
